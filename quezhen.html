@@ -1,5 +1,5 @@
 <!--
-    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/zh/editor.html?c=pie-simple
+    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/zh/editor.html?c=line-simple
 -->
 <!DOCTYPE html>
 <html style="height: 100%">
@@ -40,36 +40,57 @@ var option;
 
 option = {
   title: {
-    text: 'Referer of a Website',
-    subtext: 'Fake Data',
-    left: 'center'
+    text: '上海 新增确诊趋势'
   },
-  tooltip: {
-    trigger: 'item'
+   tooltip: {
+    trigger: 'axis'
   },
   legend: {
-    orient: 'vertical',
-    left: 'left'
+    data: ['新增确诊']
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  toolbox: {
+    feature: {
+      saveAsImage: {}
+    }
+  },
+  xAxis: {
+    type: 'category',
+     data: [
+      '3.15',
+      '3.16',
+      '3.17',
+      '3.18',
+      '3.19',
+      '3.20',
+      '3.21',
+      '3.22',
+      '3.23',
+      '3.24',
+      '3.25',
+      '3.26',
+      '3.27',
+      '3.28',
+      '3.29',
+      '3.30'
+    ]
+  },
+  yAxis: {
+    type: 'value'
   },
   series: [
     {
-      name: 'Access From',
-      type: 'pie',
-      radius: '50%',
-      data: [
-        { value: 1048, name: 'Search Engine' },
-        { value: 735, name: 'Direct' },
-        { value: 580, name: 'Email' },
-        { value: 484, name: 'Union Ads' },
-        { value: 300, name: 'Video Ads' }
-      ],
-      emphasis: {
-        itemStyle: {
-          shadowBlur: 10,
-          shadowOffsetX: 0,
-          shadowColor: 'rgba(0, 0, 0, 0.5)'
-        }
-      }
+     name: '新增确诊',
+      type: 'line',
+      stack: 'Total',
+      data: [15, 23, 67, 20, 22, 41, 39, 14, 14, 41, 47, 51, 60, 107, 329, 358]
+    
+      
     }
   ]
 };
