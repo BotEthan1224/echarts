@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=chrome">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>登录</title>
+    <title>上海市新冠肺炎疫情</title>
     
     <script type="text/javascript" src="./js/vue.js"></script>
 
@@ -26,69 +26,9 @@
         font-weight:bold;
         text-align: center;
     }
-    
-    input
-    {
-        height: 20px;
-        margin: 3px auto;
-        border: 1px solid #ccc;
-        padding: 7px 0px;
-        border-radius: 3px;
-        padding-left:5px;
-        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-        -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-        -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s
-        
-    }
-    
-    input:focus
-    {
-        border-color: #66afe9;
-        outline: 0;
-        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
-        box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
-            
-    }
-
-    .a
-    {
-        width:100px;
-        text-align:center;
-        line-height:100%;
-        padding:0.3em;
-        font:16px;
-        font-style:none;
-        text-decoration:none;
-        margin:2px;
-        vertical-align:text-bottom;
-        zoom:1;
-        outline:none;
-        font-size-adjust:none;
-        font-stretch:normal;
-        border-radius:50px;
-        box-shadow:0px 1px 2px rgba(0,0,0,0.2);
-        text-shadow:0px 1px 1px rgba(0,0,0,0.3);
-        color:#fefee9;
-        border:0.2px solid #2299ff;
-        background-repeat:repeat;
-        background-size:auto;
-        background-origin:padding-box;
-        background-clip:padding-box;
-        background-color:#3399ff;
-        background: linear-gradient(to bottom, #eeeff9 0%,#3399ff 100%);
-    
-    }
-
-    .a:hover
-    {
-        background:#268DFF;
-    }
-
     </style>
 
-    <h1 align="center">欢迎注册</h1>
+    <h1 align="center">上海市新冠肺炎疫情</h1>
     
     
 
@@ -135,151 +75,6 @@
         src="./shanghaiyiqing.html">
         </iframe>
 
-   
-        用&nbsp&nbsp户&nbsp&nbsp名：<input v-model='userName' type="text"  placeholder="请输入用户名" @watch><br>
-        密&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp码：<input v-model='userPassword' type="text"  placeholder="请输入密码"><br>
-        确认密码：<input v-model='userCheckPassword' type="text"  placeholder="请再次输入密码"><br>
-        邮&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp箱：<input v-model='userEmail' type="text"  placeholder="请输入邮箱"><br>
-        Q&nbsp&nbspQ&nbsp&nbsp&nbsp号：<input v-model='userQQ' type="text"  placeholder="请输入QQ"><br>
-        电话号码：<input v-model='userPhone' type="text"  placeholder="请输入电话号"><br>
-    
-    <button @click="submit" class='a'>提交</button><br>
-
-    <h3 align="left">请确认您的信息：</h3>
-        
-        <h4 align="left">您的用户名是:<a href="">{{userName}}</a>{{nameError}}</h4>
-        <h4 align="left">您的密码是:<a href="">{{userPassword}}</a>{{passwordError}}</h4>
-        <h4 align="left">再次确认您的密码是:<a href="">{{userCheckPassword}}</a>{{checkPwdError}}</h4>
-        <h4 align="left">您的邮箱是:<a href="">{{userEmail}}</a>{{emailError}}</h4>
-        <h4 align="left">您的QQ号是:<a href="">{{userQQ}}</a>{{qqError}}</h4>
-        <h4 align="left">您的电话号码是:<a href="">{{userPhone}}</a>{{phoneError}}</h4>
-
-    </div>
-
-    <script type="text/javascript">
-        Vue.config.productionTip = false    //阻止 vue 在启动时生成生产提示。
-        new Vue({
-           el: "#app",
-           data() {
-                
-                return {
-                   userName:'',
-                   userPassword:'',
-                   userCheckPassword:'',
-                   userEmail:'',
-                   userQQ:'',
-                   userPhone:'',
-                   nameError:'',
-                   passwordError:'',
-                   checkPwdError:'',
-                   emailError:'',
-                   qqError:'',
-                   phoneError:''
-                   
-               };
-           
-            },
-            methods:{
-                
-                submit(){
-                   console.log(this.userName)
-                   console.log(this.userPassword)
-                   console.log(this.userEmail)
-                   console.log(this.userQQ)
-                   console.log(this.userPhone)
-                   alert(this.userName+"\n"+this.userPassword+"\n"+this.userEmail+"\n"+this.userQQ+"\n"+this.userPhone)
-                },
-
-           },
-            watch:{
-                
-                userName:{
-                    handler(newName,oldName){
-                        var pattern = /^[A-Za-z0-9]+$/i; //使用test函数配合正则表达式和watch的监听效果进行对用户输入数据的格式判断
-                        result=pattern.test(this.userName);
-                        if(!result){
-                            this.userName=newName
-                            this.nameError="用户名格式输入错误或为空，请检查并重新输入后再提交！"
-                        }else{
-                            this.userName=newName
-                            this.nameError=''
-                        }
-                },
-            },  
-                userPassword:{
-                    handler(newPassword,oldPassword){
-                        var pattern = /^[A-Za-z0-9]+$/i;
-                        result=pattern.test(this.userPassword);
-                        console.log(result)
-                        if(!result){
-                        this.userPassword=newPassword
-                        this.passwordError="密码格式输入错误或为空，请检查并重新输入后再提交！"
-                        }else{
-                            this.userPassword=newPassword
-                            this.passwordError=''
-                        }
-                },
-            },
-                userCheckPassword:{
-                    handler(newCheckPassword,oldCheckPassword){
-                        var pattern = /^[A-Za-z0-9]+$/i;
-                        result=pattern.test(this.userCheckPassword);
-                        console.log(result)
-                        if(!result|this.userCheckPassword!=this.userPassword){
-                        this.userCheckPassword=newCheckPassword
-                        this.checkPwdError="密码两次输入不一致或为空，请检查并重新输入后再提交！"
-                        }else{
-                            this.userCheckPassword=newCheckPassword
-                            this.checkPwdError=''
-                        }
-                },
-            },
-                userEmail:{
-                    handler(newEmail,oldEmail){
-                        var pattern = /^[a-zA-Z1-9]\w{1,}@[a-zA-Z1-9]{2,}(\.(com|cn|net)){1,2}$/i;
-                        result=pattern.test(this.userEmail);
-                        if(!result){
-                        this.userEmail=newEmail
-                        this.emailError="邮箱输入格式错误或为空，请检查并重新输入后再提交！"
-                        }else{
-                            this.userEmail=newEmail
-                            this.emailError=''
-                        }
-                },
-            },
-                userQQ:{
-                    
-                    handler(newQQ,oldQQ){
-                        var pattern = /[1-9][0-9]{4,}/i;
-                        result=pattern.test(this.userQQ);
-                        if(!result){
-                        this.userQQ=newQQ
-                        this.qqError="QQ号码输入格式错误或为空，请检查并重新输入后再提交！"
-                        }else{
-                            this.userQQ=newQQ
-                            this.qqError=''
-                        }
-                },
-            },
-                userPhone:{
-                    
-                    handler(newPhone,oldPhone){
-                        var pattern = /^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/i;
-                        result=pattern.test(this.userPhone);
-                        if(!result){
-                        this.userPhone=newPhone
-                        this.phoneError="手机号码输入格式错误或为空，请检查并重新输入后再提交！"
-                        }else{
-                            this.userPhone=newPhone
-                            this.phoneError=''
-                        }
-                },
-
-            }
-            
-                    }
-                })
-  
    
    </script>
 </head>
